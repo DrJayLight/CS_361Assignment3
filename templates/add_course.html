@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Add Course</title>
+</head>
+<body>
+    <h1>Add Course</h1>
+    
+    {% if form.errors %}
+        <p style="color: red;">
+        Please enter field{{form.errors|pluralize}}correctly.
+        </p>
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
